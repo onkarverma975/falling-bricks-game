@@ -1,0 +1,104 @@
+
+----------------------------------------------------------------
+DEMO CONTROLS
+----------------------------------------------------------------
+Brick Breaker
+Assignment 1
+Onkar Verma
+201501028
+
+This is a very basic game of brick breaking. Bricks fallof randomly from the roof after fixed interval of time. Aim of the game is the collect bricks in the buckets corresponding to their colours. Also, there is a x-fixed y-movable cannon that can shoot down the falling bricks. A black brick should not fall in any of the buckets. This should end the game.  Buckets and cannon are movable by mouse as well as keyboard controls. 
+Controls:
+	‘A’ 	- 	rotate laser shooter up
+	‘D’	-	rotate laser shooter down
+	‘S’	-	move laser shooter down
+	‘W’	-	move laser shooter up
+	‘M’	-	increase speed
+	‘N’	-	decrease bricks speed
+	Arrow keys – adjust the viewing area when zoomed.
+Mouse:
+	click on the cannon to move it up or down
+	click anywhere in the bricks falling area to aim that laser at that point.
+Game Over Conditions:
+	
+	black brick falls on the bucket
+
+press ‘r’ at any time to restart the game
+press ‘q’ at any time to quit the game
+whenever m or n is pressed ,new level (speed of bricks in printed)
+
+To  change view options like
+	-zoom, use mouse scroll / up or down arrows
+	-pan, use left or right arrow keys / move mouse when right clicked .
+
+
+Bonus:
+
+
+A faint tone is played when there is an update in the score.
+If laser hits the back of the mirror, it is not relfected , but absorbed.
+
+----------------------------------------------------------------
+DEPENDENCIES
+----------------------------------------------------------------
+Linux/Windows/ Mac OSX - Dependencies: (Recommended)
+ GLFW
+ GLAD
+ GLM
+
+Linux - Dependencies: (alternative)
+ FreeGLUT
+ GLEW
+ GLM
+
+----------------------------------------------------------------
+INSTALLATION
+----------------------------------------------------------------
+GLFW:
+ - Install CMake
+ - Obtain & Extract the GLFW source code from
+   https://github.com/glfw/glfw/archive/master.zip
+ - Compile with below commands
+   $ cd glfw-master
+   $ mkdir build
+   $ cd build
+   $ cmake -DBUILD_SHARED_LIBS=ON ..
+   $ make && sudo make install
+
+GLAD:
+ - Go to http://glad.dav1d.de
+ - Language: C/C++
+   Specification: OpenGL
+   gl: Version 4.5
+   gles1: Version 1.0
+   gles2: Version 3.2
+   Profile: Core
+   Select 'Add All' under extensions and click Generate.
+ - Download the zip file generated.
+ - Copy contents of include/ folder in the downloaded directory 
+   to /usr/local/include/
+ - src/glad.c should be always compiled along with your OpenGL 
+   code
+
+GLM:
+ - Download the zip file from 
+   https://github.com/g-truc/glm/releases/tag/0.9.7.2
+ - Unzip it and copy the folder glm/glm/ to /usr/local/include
+
+Ubuntu users can also install these libraries using apt-get.
+It is recommended to use GLFW+GLAD+GLM on all OSes.
+
+
+FreeGLUT+GLEW+GLM can be used only on linux but not recommended.
+Use apt-get to install FreeGLUT, libglew, glm on Linux.
+
+---------------------------------------------------
+Based on the your installation run the makefile in the GLFW or GLUT
+If the system is linux then convert Makefile.linux to Makefile and run the make command
+
+$mv Makefile.linux Makefile
+$make
+$./sample2D 
+
+Similarly for mac
+
